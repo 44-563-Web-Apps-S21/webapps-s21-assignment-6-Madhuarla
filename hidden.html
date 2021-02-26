@@ -24,6 +24,12 @@
 
 
 <p id="result">This text will be replaced </p>
+<div class="container">
+    
+    <img src="Lobelia.jpg" id="image" onclick=rotateImage() width="200px" height="200px"> 
+    
+
+</div>
 
 <script> 
 var correct = 0;
@@ -47,6 +53,22 @@ function processGuess(){
             worng=wrong+1;
             alert("Sorry");
             out.innerHTML = "wrong value ="+wrong
+        }
+        function rotateImage(){
+            switch(currentImage){
+                case 0:
+                    document.getElementById("image").src ="Lobelia.jpg"
+                    currentImage = 1;
+                    break;
+                case 1:
+                    document.getElementById("image").src="Magnolia.jpg"
+                    currentImage = 2;
+                    break;
+                case 2:
+                    document.getElementById("image").src="ramonda.jpg"
+                    currentImage = 0;
+                    break;
+            }
         }
 }
 </script>
