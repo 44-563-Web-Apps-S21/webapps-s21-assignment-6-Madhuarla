@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> 6th page </title>
+    </head>
+ 
+<body>
+    <h1>Hidden Things By Madhu Babu Arla</h1>
+
+<h2>Getting input</h2>
+
+<form>
+    <label for="form1_password">Enter the secret word</label>
+    <input type ="password" id="form1_password" name="form1_password" value="secret" autofocus> <br>
+    
+
+    <label for="form1_guess">Enter a guess</label>
+    <input type ="text" id="form1_guess" name="form1_guess" autofocus> <br>
+
+    <input type="button" onclick="processGuess()" value="Check the guess">
+
+    
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+var correct = 0;
+var worng = 0;
+
+
+function processGuess(){
+    console.log("Getting form values")
+    secret = document.getElementById("form1_password").value
+    guess = document.getElementById("form1_guess").value
+    
+    
+    out = document.getElementById("result")
+    if(secret == guess){
+        correct =correct+1;
+        alert("Congratulations");
+        out.innerHTML = "correct value ="+correct
+        }
+         else 
+        {
+            worng=wrong+1;
+            alert("Sorry");
+            out.innerHTML = "wrong value ="+wrong
+        }
+}
+</script>
+
+</body>
+</html> 
