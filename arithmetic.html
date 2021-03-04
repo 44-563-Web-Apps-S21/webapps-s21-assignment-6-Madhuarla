@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>operations</title>
+    </head>
+ 
+<body>
+
+<h2>Madhu Babu Arla computes</h2>
+
+<form>
+    <label for="form1_Value">Enter a number</label>
+    <input type ="number" id="form1_Value" name="form1_Value" value="10"> <br>
+
+    <label for="form2_Value">Enter a number </label>
+    <input type ="number" id="form2_Value" name="form2_Value" value="2"> <br>
+
+    <input type="button" onclick="permutations()" value="Compute">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<form>
+    <input type="radio" id="add" name="addition" value="plus" onclick="processRadio()">
+    <label for="add"> + </label></br>
+  
+    <input type="radio" id="sub" name="subtraction" value="minus" onclick="processRadio()">
+    <label for="sub"> - </label></br>
+  
+    <input type="radio" id="mul" name="multiplication" value="times" onclick="processRadio()">
+    <label for="mul"> * </label></br>
+
+    <input type="radio" id="div" name="divison" value="divide" onclick="processRadio()">
+    <label for="div"> / </label></br>
+
+  </form>
+
+  <p id="res2">This text will be replaced </p>
+
+<script> 
+
+function permutations(){
+
+    console.log("Getting form values")
+    var first = document.getElementById("form1_Value").value
+    var second = document.getElementById("form2_Value").value
+    var product = 1;
+    
+    for(let i=first; i>=(first-second+1); i-- ){
+        product = product*i
+    }
+
+    out = document.getElementById("result")
+    out.innerHTML = "first permute seccond is "+product;
+}
+
+function processRadio(){
+    console.log("Getting Form Values")
+    var first = document.getElementById("form1_Value").value
+    var second = document.getElementById("form2_Value").value
+    first = parseInt(first)
+    second = parseInt(second)
+    out = document.getElementById("res2")
+    if(document.getElementById("add").checked){
+        out.innerHTML = first + second
+    }else if(document.getElementById("minus").checked){
+        out.innerHTML = first - second
+    }else if(document.getElementById("times").checked){
+        out.innerHTML = first * second
+    }else if(document.getElementById("divide").checked){
+        out.innerHTML = first / second
+    }
+    
+}
+
+</script>
+
+</body>
+</html> 
